@@ -1,7 +1,15 @@
 plugins {
     id("java")
     id("com.github.ben-manes.versions") version "0.51.0"
+    id("org.sonarqube") version "7.2.3.7755"
     application
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "artem90s_java-project-61")
+        property("sonar.organization", "artem90s")
+    }
 }
 
 application {
