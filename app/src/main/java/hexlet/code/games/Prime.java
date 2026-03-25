@@ -9,6 +9,7 @@ public class Prime {
 
     public static void play(String name) {
         try (Scanner scanner = new Scanner(System.in)) {
+            // Safe here: used only for non-security purposes
             Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int digital = random.nextInt(99);

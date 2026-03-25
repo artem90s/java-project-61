@@ -7,7 +7,7 @@ public class Calc {
     public static void play(String name) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-
+            // Safe here: used only for non-security purposes
             Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int first = random.nextInt(49) + 1;

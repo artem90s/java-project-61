@@ -17,7 +17,6 @@ public class Engine {
             name = scanner.nextLine();
             System.out.printf("Hello, %s!%n", name);
             switch (choice) {
-                case 1 -> Cli.greeting();
                 case 2 -> {
                     System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                     Even.play(name);
