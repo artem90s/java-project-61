@@ -4,12 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
+    private static final int BOUND = 49;
+    private static final  int COUNT = 3;
     public static void play(String name, Random random) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            for (int i = 0; i < 3; i++) {
-                int first = random.nextInt(49) + 1;
-                int second = random.nextInt(49) + 1;
+            for (int i = 0; i < COUNT; i++) {
+                int first = random.nextInt(BOUND) + 1;
+                int second = random.nextInt(BOUND) + 1;
                 char[] operations = {'+', '-', '*'};
                 char operation = operations[random.nextInt(operations.length)];
                 System.out.printf("Question: %d %c %d%n", first, operation, second);

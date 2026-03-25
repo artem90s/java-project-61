@@ -6,11 +6,14 @@ import java.util.Scanner;
 public class Even {
     private static final String YES = "yes";
     private static final String NO = "no";
+
+    private static final int BOUND = 99;
+    private static final int COUNT = 3;
     public static void play(String name, Random random) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            for (int i = 0; i < 3; i++) {
-                int digital = random.nextInt(99) + 1;
+            for (int i = 0; i < COUNT; i++) {
+                int digital = random.nextInt(BOUND) + 1;
                 System.out.printf("Question: %d%n", digital);
                 if (scanner.hasNext()) {
                     String answer = scanner.nextLine().trim().toLowerCase();

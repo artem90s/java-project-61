@@ -7,13 +7,15 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Progression {
+    private static final int BOUND = 10;
+    private static final int COUNT = 3;
     public static void play(String name, Random random) {
         try (Scanner scanner = new Scanner(System.in)) {
-            for (int i = 0; i < 3; i++) {
-                int length = random.nextInt(10) + 5;
-                int start = random.nextInt(10) + 1;
+            for (int i = 0; i < COUNT; i++) {
+                int length = random.nextInt(BOUND);
+                int start = random.nextInt(BOUND);
                 int secret = random.nextInt(length);
-                int step = random.nextInt(10) + 1;
+                int step = random.nextInt(BOUND) + 1;
                 List<Integer> subsequence = createSubsequence(length, start, step);
                 String question = subsequence.stream()
                         .map(String::valueOf)

@@ -7,10 +7,13 @@ public class Prime {
     private static final String YES = "yes";
     private static final String NO = "no";
 
+    private static final int BOUND = 99;
+    private static final int COUNT = 3;
+
     public static void play(String name, Random random) {
         try (Scanner scanner = new Scanner(System.in)) {
-            for (int i = 0; i < 3; i++) {
-                int digital = random.nextInt(99);
+            for (int i = 0; i < COUNT; i++) {
+                int digital = random.nextInt(BOUND);
                 System.out.printf("Question: %d%n", digital);
                 if (scanner.hasNext()) {
                     String answer = scanner.nextLine().trim().toLowerCase();
@@ -41,7 +44,7 @@ public class Prime {
             return NO;
         }
 
-        for (int i = 3; i * i <= n; i += 2) {
+        for (int i = COUNT; i * i <= n; i += 2) {
             if (n % i == 0) {
                 return NO;
             }

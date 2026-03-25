@@ -4,11 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
+    private static final int BOUND = 99;
+    private static final int COUNT = 3;
     public static void play(String name, Random random) {
         try (Scanner scanner = new Scanner(System.in)) {
-            for (int i = 0; i < 3; i++) {
-                int first = random.nextInt(99) + 1;
-                int second = random.nextInt(99) + 1;
+            for (int i = 0; i < COUNT; i++) {
+                int first = random.nextInt(BOUND) + 1;
+                int second = random.nextInt(BOUND) + 1;
                 System.out.printf("Question: %d %d%n", first, second);
                 if (scanner.hasNext()) {
                     String answer = scanner.nextLine().trim().toLowerCase();
