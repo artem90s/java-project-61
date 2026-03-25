@@ -7,10 +7,8 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Progression {
-    public static void play(String name) {
+    public static void play(String name, Random random) {
         try (Scanner scanner = new Scanner(System.in)) {
-            @SuppressWarnings("java:S2245")
-            Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int length = random.nextInt(10) + 5;
                 int start = random.nextInt(10) + 1;

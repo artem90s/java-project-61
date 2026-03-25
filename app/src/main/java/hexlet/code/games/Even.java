@@ -6,11 +6,9 @@ import java.util.Scanner;
 public class Even {
     private static final String YES = "yes";
     private static final String NO = "no";
-    public static void play(String name) {
+    public static void play(String name, Random random) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            @SuppressWarnings("java:S2245")
-            Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int digital = random.nextInt(99) + 1;
                 System.out.printf("Question: %d%n", digital);

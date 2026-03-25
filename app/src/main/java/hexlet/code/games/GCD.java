@@ -4,10 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-    public static void play(String name) {
+    public static void play(String name, Random random) {
         try (Scanner scanner = new Scanner(System.in)) {
-            @SuppressWarnings("java:S2245")
-            Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int first = random.nextInt(99) + 1;
                 int second = random.nextInt(99) + 1;

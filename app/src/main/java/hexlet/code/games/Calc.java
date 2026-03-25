@@ -4,11 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    public static void play(String name) {
+    public static void play(String name, Random random) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            @SuppressWarnings("java:S2245")
-            Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int first = random.nextInt(49) + 1;
                 int second = random.nextInt(49) + 1;
