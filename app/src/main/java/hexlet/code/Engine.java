@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    private static final Random random = new SecureRandom();
     public static void start(int choice) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -18,7 +19,7 @@ public class Engine {
         try (Scanner scanner = new Scanner(System.in)) {
             name = scanner.nextLine();
             System.out.printf("Hello, %s!%n", name);
-            Random random = new SecureRandom();
+
             switch (choice) {
                 case 2 -> {
                     System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
