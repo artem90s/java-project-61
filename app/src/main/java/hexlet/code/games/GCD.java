@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class GCD {
     public static void play(String name) {
         try (Scanner scanner = new Scanner(System.in)) {
-            // Safe here: used only for non-security purposes
+            @SuppressWarnings("java:S2245")
             Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int first = random.nextInt(99) + 1;
@@ -20,7 +20,7 @@ public class GCD {
                         System.out.println("Correct!");
                     } else {
                         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", answer, res);
-                        System.out.printf("Let's try again, %s%n", name);
+                        System.out.printf("Let's try again, %s!%n", name);
                         return;
                     }
 

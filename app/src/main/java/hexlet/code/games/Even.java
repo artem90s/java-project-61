@@ -9,7 +9,7 @@ public class Even {
     public static void play(String name) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            // Safe here: used only for non-security purposes
+            @SuppressWarnings("java:S2245")
             Random random = new Random();
             for (int i = 0; i < 3; i++) {
                 int digital = random.nextInt(99) + 1;
@@ -21,7 +21,7 @@ public class Even {
                         System.out.println("Correct!");
                     } else {
                         System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                        System.out.printf("Let's try again, %s%n", name);
+                        System.out.printf("Let's try again, %s!%n", name);
                         return;
                     }
 
