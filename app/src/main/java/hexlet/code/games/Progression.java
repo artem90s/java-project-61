@@ -9,10 +9,11 @@ import java.util.stream.Collectors;
 public class Progression {
     private static final int BOUND = 10;
     private static final int COUNT = 3;
+    private static final int MIN = 5;
     public static void play(String name, Random random) {
         try (Scanner scanner = new Scanner(System.in)) {
             for (int i = 0; i < COUNT; i++) {
-                int length = random.nextInt(BOUND);
+                int length = random.nextInt(BOUND) + MIN;
                 int start = random.nextInt(BOUND);
                 int secret = random.nextInt(length);
                 int step = random.nextInt(BOUND) + 1;

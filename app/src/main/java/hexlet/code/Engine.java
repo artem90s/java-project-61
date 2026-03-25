@@ -12,6 +12,12 @@ import java.util.Scanner;
 
 public class Engine {
     private static final Random RANDOM = new SecureRandom();
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD_GAME = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+
     public static void start(int choice) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -21,23 +27,23 @@ public class Engine {
             System.out.printf("Hello, %s!%n", name);
 
             switch (choice) {
-                case 2 -> {
+                case EVEN -> {
                     System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                     Even.play(name, RANDOM);
                 }
-                case 3 -> {
+                case CALC -> {
                     System.out.println("What is the result of the expression?");
                     Calc.play(name, RANDOM);
                 }
-                case 4 -> {
+                case GCD_GAME -> {
                     System.out.println("Find the greatest common divisor of given numbers.");
                     GCD.play(name, RANDOM);
                 }
-                case 5 -> {
+                case PROGRESSION -> {
                     System.out.println("What number is missing in the progression?");
                     Progression.play(name, RANDOM);
                 }
-                case 6 -> {
+                case PRIME -> {
                     System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                     Prime.play(name, RANDOM);
                 }
