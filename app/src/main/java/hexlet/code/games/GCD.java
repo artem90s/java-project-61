@@ -1,33 +1,21 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class GCD {
     private static final int BOUND = 99;
     private static final int COUNT = 3;
-    public static void play(String name, Random random) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            for (int i = 0; i < COUNT; i++) {
-                int first = random.nextInt(BOUND) + 1;
-                int second = random.nextInt(BOUND) + 1;
-                System.out.printf("Question: %d %d%n", first, second);
-                if (scanner.hasNext()) {
-                    String answer = scanner.nextLine().trim().toLowerCase();
-                    System.out.printf("Your answer: %s%n", answer);
-                    String res = String.valueOf(gcd(first, second));
-                    if (answer.equals(res)) {
-                        System.out.println("Correct!");
-                    } else {
-                        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%n", answer, res);
-                        System.out.printf("Let's try again, %s!%n", name);
-                        return;
-                    }
 
-                }
-            }
-            System.out.printf("Congratulations, %s!", name);
+    public static void play(Random random) {
+        String[][] requestResponses = new String[COUNT][];
+        for (int i = 0; i < COUNT; i++) {
+            int first = random.nextInt(BOUND) + 1;
+            int second = random.nextInt(BOUND) + 1;
+            requestResponses[i] = new String[]{String.format(first + " " + second), String.valueOf(gcd(first, second))};
         }
+        Engine.start("Find the greatest common divisor of given numbers.", requestResponses);
     }
 
     private static int gcd(int a, int b) {
