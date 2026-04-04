@@ -1,9 +1,16 @@
 package hexlet.code;
 
+import java.security.SecureRandom;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int ROUNDS = 3;
+    public static final int BOUND = 99;
+    public static final String YES = "yes";
+    public static final String NO = "no";
 
+    public static final Random RANDOM = new SecureRandom();
     public static void start(String words, String[][] matrix) {
         System.out.printf("%nWelcome to the Brain Games!%n");
         System.out.print("May I have your name? ");

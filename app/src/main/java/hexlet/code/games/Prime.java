@@ -2,20 +2,16 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Engine.NO;
+import static hexlet.code.Engine.RANDOM;
+import static hexlet.code.Engine.YES;
 
 public class Prime {
-    private static final String YES = "yes";
-    private static final String NO = "no";
+     public static void play() {
+        String[][] requestResponses = new String[Engine.ROUNDS][];
 
-    private static final int BOUND = 99;
-    private static final int COUNT = 3;
-
-    public static void play(Random random) {
-        String[][] requestResponses = new String[COUNT][];
-
-        for (int i = 0; i < COUNT; i++) {
-            int digital = random.nextInt(BOUND);
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int digital = RANDOM.nextInt(Engine.BOUND);
             requestResponses[i] = new String[]{String.valueOf(digital), isPrime(digital) ? YES : NO};
         }
         Engine.start("Answer 'yes' if given number is prime. Otherwise answer 'no'.", requestResponses);
@@ -32,9 +28,9 @@ public class Prime {
             return false;
         }
 
-        for (int i = COUNT; i * i <= n; i += 2) {
+        for (int i = Engine.ROUNDS; i * i <= n; i += 2) {
             if (n % i == 0) {
-                return true;
+                return false;
             }
         }
         return true;

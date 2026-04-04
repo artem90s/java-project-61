@@ -2,18 +2,16 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Engine.RANDOM;
 
 public class Calc {
-    private static final int BOUND = 49;
-    private static final  int COUNT = 3;
-    public static void play(Random random) {
-        String[][] requestResponses = new String[COUNT][];
-            for (int i = 0; i < COUNT; i++) {
-                int first = random.nextInt(BOUND) + 1;
-                int second = random.nextInt(BOUND) + 1;
+    public static void play() {
+        String[][] requestResponses = new String[Engine.ROUNDS][];
+            for (int i = 0; i < Engine.ROUNDS; i++) {
+                int first = RANDOM.nextInt(Engine.BOUND) + 1;
+                int second = RANDOM.nextInt(Engine.BOUND) + 1;
                 char[] operations = {'+', '-', '*'};
-                char operation = operations[random.nextInt(operations.length)];
+                char operation = operations[RANDOM.nextInt(operations.length)];
                 String request = String.format(first + " " + operation + " " + second);
                 requestResponses[i] = new String[]{request, String.valueOf(compute(first, operation, second))};
             }

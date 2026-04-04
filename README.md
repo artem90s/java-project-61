@@ -1,18 +1,6 @@
-В данном репозитории находится исходный код сборника игр:
-* Игры разума.
-
-Один из вариантов запуска приложения - запуск через утилиту Make.
-Запуск выполняется в два действия.
-
-```shell
-gradlew installDist
-make run-dist
-```
-
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/artem90s/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artem90s/java-project-61/actions)
-
-# Sonar
+### Sonar
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=artem90s_java-project-61&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=artem90s_java-project-61)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=artem90s_java-project-61&metric=bugs)](https://sonarcloud.io/summary/new_code?id=artem90s_java-project-61)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=artem90s_java-project-61&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=artem90s_java-project-61)
@@ -23,6 +11,17 @@ make run-dist
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=artem90s_java-project-61&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=artem90s_java-project-61)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=artem90s_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=artem90s_java-project-61)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=artem90s_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=artem90s_java-project-61)
+
+В данном репозитории находится исходный код сборника игр:
+* Игры разума.
+
+Один из вариантов запуска приложения - запуск через утилиту Make.
+Запуск выполняется в два действия.
+
+```shell
+gradlew installDist
+make run-dist
+```
 
 # ScreenShot
 ![img.png](app/src/main/resources/img.png)

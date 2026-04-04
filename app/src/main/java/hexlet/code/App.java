@@ -6,8 +6,6 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
-import java.security.SecureRandom;
-import java.util.Random;
 import java.util.Scanner;
 
 public class App {
@@ -17,7 +15,7 @@ public class App {
     private static final int GCD_GAME = 4;
     private static final int PROGRESSION = 5;
     private static final int PRIME = 6;
-    private static final Random RANDOM = new SecureRandom();
+
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -34,13 +32,12 @@ public class App {
                 System.out.printf("Your choice: %d%n", choice);
                 switch (choice) {
                     case GREET -> Cli.greeting();
-                    case EVEN -> Even.play(RANDOM);
-                    case CALC -> Calc.play(RANDOM);
-                    case GCD_GAME -> GCD.play(RANDOM);
-                    case PROGRESSION -> Progression.play(RANDOM);
-                    case PRIME -> Prime.play(RANDOM);
-                    default -> {
-                    }
+                    case EVEN -> Even.play();
+                    case CALC -> Calc.play();
+                    case GCD_GAME -> GCD.play();
+                    case PROGRESSION -> Progression.play();
+                    case PRIME -> Prime.play();
+                    default -> System.out.println("Unknown user choice" + choice);
                 }
             }
         }

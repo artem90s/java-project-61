@@ -2,20 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Engine.RANDOM;
 
 public class Progression {
-    private static final int BOUND = 10;
-    private static final int COUNT = 3;
     private static final int MIN = 5;
 
-    public static void play(Random random) {
-        String[][] requestResponses = new String[COUNT][];
-        for (int i = 0; i < COUNT; i++) {
-            int length = random.nextInt(BOUND) + MIN;
-            int first = random.nextInt(BOUND);
-            int hiddenIndex = random.nextInt(length);
-            int step = random.nextInt(BOUND) + 1;
+    public static void play() {
+        String[][] requestResponses = new String[Engine.ROUNDS][];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int length = RANDOM.nextInt(Engine.BOUND) + MIN;
+            int first = RANDOM.nextInt(Engine.BOUND);
+            int hiddenIndex = RANDOM.nextInt(length);
+            int step = RANDOM.nextInt(Engine.BOUND) + 1;
             String[] progression = makeProgression(length, first, step);
             String answer = progression[hiddenIndex];
             progression[hiddenIndex] = "..";
