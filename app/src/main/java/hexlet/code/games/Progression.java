@@ -5,15 +5,16 @@ import hexlet.code.Engine;
 import static hexlet.code.Engine.RANDOM;
 
 public class Progression {
+    public static final int BOUND = 99;
     private static final int MIN = 5;
 
     public static void play() {
         String[][] requestResponses = new String[Engine.ROUNDS][];
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int length = RANDOM.nextInt(Engine.BOUND) + MIN;
-            int first = RANDOM.nextInt(Engine.BOUND);
+            int length = RANDOM.nextInt(BOUND) + MIN;
+            int first = RANDOM.nextInt(BOUND);
             int hiddenIndex = RANDOM.nextInt(length);
-            int step = RANDOM.nextInt(Engine.BOUND) + 1;
+            int step = RANDOM.nextInt(BOUND) + 1;
             String[] progression = makeProgression(length, first, step);
             String answer = progression[hiddenIndex];
             progression[hiddenIndex] = "..";
