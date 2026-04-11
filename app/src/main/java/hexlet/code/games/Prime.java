@@ -9,7 +9,8 @@ public class Prime {
     public static final int COUNT = 3;
     public static final String YES = "yes";
     public static final String NO = "no";
-     public static void play() {
+
+    public static void play() {
         String[][] requestResponses = new String[Engine.ROUNDS][];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
@@ -29,7 +30,8 @@ public class Prime {
         if (n % 2 == 0) {
             return false;
         }
-        for (int i = COUNT; i * i <= n; i += 2) {
+        final int startValue = 3;
+        for (int i = startValue; i * i <= n; i += 2) {
             if (n % i == 0) {
                 return false;
             }

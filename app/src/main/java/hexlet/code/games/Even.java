@@ -12,12 +12,12 @@ public class Even {
         String[][] requestResponses = new String[Engine.ROUNDS][];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int digital = RANDOM.nextInt(BOUND) + 1;
-            requestResponses[i] = new String[]{String.valueOf(digital), check(digital) ? YES : NO};
+            requestResponses[i] = new String[]{String.valueOf(digital), isEven(digital) ? YES : NO};
         }
         Engine.start("Answer 'yes' if the number is even, otherwise answer 'no'.", requestResponses);
     }
 
-    private static boolean check(int d) {
+    private static boolean isEven(int d) {
         return d % 2 == 0;
     }
 }
